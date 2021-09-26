@@ -1,10 +1,10 @@
-from gtts import gTTS
+from gtts import gTTS  # libraray used for text to speech conversion
 import base64
 
 
 def text2Speech(data):
-    my_text = data
-    tts = gTTS(text=my_text, lang='en', slow=False)
+    my_text = data  # text data
+    tts = gTTS(text=my_text, lang='en', slow=False) # converting to speech data in english lanuage
     tts.save('converted-file.mp3')  # save file as ... (here saving as mp3)
     with open("converted-file.mp3", "rb") as file:
         my_string = base64.b64encode(file.read())
